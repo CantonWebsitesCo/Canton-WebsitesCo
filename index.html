@@ -1,0 +1,1087 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Canton Websites Co. builds modern websites for small businesses.">
+  <title>Canton Websites Co. | Websites That Work</title>
+
+  <style>
+    :root {
+      --bg: #080b12;
+      --surface: #101622;
+      --surface-light: #151e2d;
+      --text: #f5f7fb;
+      --muted: #9aa7bb;
+      --blue: #5794ff;
+      --blue-light: #80b0ff;
+      --border: rgba(255,255,255,.1);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .announcement {
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 13px;
+      color: #d7e5ff;
+      background: #101d33;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .announcement span { color: var(--blue-light); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8,11,18,.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      white-space: nowrap;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #70a9ff, #316be8);
+      color: white;
+      font-weight: 900;
+      box-shadow: 0 5px 25px #3979ef30;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #c0c9d8;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 19px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      font-weight: 750;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform .2s, background .2s, border-color .2s;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button-primary {
+      color: white;
+      background: var(--blue);
+      box-shadow: 0 6px 24px #5794ff24;
+    }
+
+    .button-primary:hover { background: #397df1; }
+
+    .button-outline {
+      border-color: var(--border);
+      background: #ffffff06;
+      color: white;
+    }
+
+    .button-outline:hover { border-color: var(--blue); }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 86px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 600px;
+      height: 500px;
+      top: -190px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #276ce51b;
+      filter: blur(100px);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid #5794ff45;
+      border-radius: 999px;
+      padding: 7px 13px;
+      color: #b9d3ff;
+      background: #5794ff0c;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #5ee0a0;
+      box-shadow: 0 0 12px #5ee0a080;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 27px auto 22px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -4px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #80b0ff, #4e83f4 55%, #a2c8ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 610px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #8491a5;
+    }
+
+    .preview-window {
+      max-width: 850px;
+      margin: 65px auto 0;
+      border: 1px solid #ffffff1b;
+      border-radius: 17px;
+      overflow: hidden;
+      background: #0e1420;
+      text-align: left;
+      box-shadow: 0 35px 100px #0008, 0 0 70px #367cf512;
+    }
+
+    .window-bar {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 15px;
+      border-bottom: 1px solid var(--border);
+      color: #8390a6;
+      font-size: 11px;
+    }
+
+    .window-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #344158;
+    }
+
+    .window-address {
+      margin-left: 10px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: #ffffff06;
+    }
+
+    .mock-site {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding: 34px;
+      align-items: center;
+      min-height: 270px;
+    }
+
+    .mock-label {
+      color: var(--blue-light);
+      font-size: 10px;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .mock-site h2 {
+      font-size: clamp(25px, 4vw, 39px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin: 12px 0;
+    }
+
+    .mock-site p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .mock-button {
+      display: inline-block;
+      background: var(--blue);
+      padding: 9px 12px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    .mock-art {
+      min-height: 190px;
+      border-radius: 12px;
+      border: 1px solid #ffffff16;
+      background:
+        radial-gradient(ellipse at 65% 30%, #5794ff65, transparent 45%),
+        linear-gradient(140deg, #1b2a43, #101622 65%);
+      padding: 18px;
+      display: flex;
+      align-items: end;
+    }
+
+    .mock-card {
+      width: 100%;
+      padding: 15px;
+      background: #0b111ddd;
+      border: 1px solid #ffffff20;
+      border-radius: 9px;
+    }
+
+    .mock-line {
+      height: 6px;
+      border-radius: 10px;
+      background: #91b9ff55;
+      margin: 8px 0;
+    }
+
+    .mock-line.short { width: 55%; }
+    .mock-line.long { width: 90%; }
+
+    section { padding: 82px 0; }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .section-kicker {
+      color: var(--blue-light);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      letter-spacing: -1.8px;
+      line-height: 1.12;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .services-grid, .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #121a28, #0d121c);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #5794ff70;
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid #5794ff40;
+      background: #5794ff12;
+      color: var(--blue-light);
+      border-radius: 13px;
+      font-size: 21px;
+    }
+
+    .card h3 {
+      margin: 19px 0 9px;
+      font-size: 19px;
+      letter-spacing: -.4px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--blue-light);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .why-section {
+      background: #0c111b;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .why-copy h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 13px 0;
+    }
+
+    .why-copy p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .benefit-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      border: 1px solid var(--border);
+      background: #ffffff04;
+      padding: 17px;
+      border-radius: 13px;
+    }
+
+    .check {
+      display: grid;
+      place-items: center;
+      flex: 0 0 26px;
+      height: 26px;
+      background: #5794ff1c;
+      color: var(--blue-light);
+      border-radius: 8px;
+      font-weight: 900;
+    }
+
+    .benefit strong { display: block; font-size: 14px; }
+    .benefit span:last-child { color: var(--muted); font-size: 12px; }
+
+    .pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pricing-card.featured {
+      border-color: #5794ff95;
+      box-shadow: 0 0 35px #5794ff0d;
+    }
+
+    .popular {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border-radius: 999px;
+      background: #5794ff1c;
+      color: var(--blue-light);
+      padding: 5px 9px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    .price {
+      margin: 13px 0 4px;
+      font-size: 24px;
+      font-weight: 850;
+      letter-spacing: -.7px;
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 23px 0;
+      display: grid;
+      gap: 12px;
+      color: #c4cede;
+      font-size: 13px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: var(--blue-light);
+      font-weight: 900;
+      margin-right: 9px;
+    }
+
+    .pricing-card .button {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .step-number {
+      font-size: 13px;
+      color: var(--blue-light);
+      font-weight: 850;
+      letter-spacing: 1px;
+    }
+
+    .process-grid h3 {
+      font-size: 17px;
+      margin: 13px 0 7px;
+    }
+
+    .process-grid p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .contact-panel {
+      border: 1px solid #5794ff40;
+      background:
+        radial-gradient(ellipse at 90% 0%, #5794ff1b, transparent 48%),
+        linear-gradient(140deg, #111a2a, #0d121c);
+      border-radius: 24px;
+      padding: clamp(25px, 5vw, 55px);
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 40px;
+    }
+
+    .contact-copy h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.1;
+      letter-spacing: -1.8px;
+      margin: 12px 0;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .email-link {
+      color: var(--blue-light);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: #d3dceb;
+      font-weight: 700;
+    }
+
+    .field input, .field textarea, .field select {
+      width: 100%;
+      padding: 12px 13px;
+      color: white;
+      background: #080d16;
+      border: 1px solid #ffffff1a;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .field input:focus, .field textarea:focus, .field select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px #5794ff18;
+    }
+
+    .field textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .field select option { background: #101622; }
+
+    .form-message {
+      color: #a9caff;
+      font-size: 12px;
+      min-height: 18px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: white; }
+
+    .reveal {
+      animation: rise .7s both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 22px;
+        background: #0b101a;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+      }
+
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: inline-block; }
+      .nav > .button { display: none; }
+      .services-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .why-grid, .contact-panel { grid-template-columns: 1fr; gap: 28px; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { padding-top: 75px; }
+      .mock-site { padding: 20px; gap: 15px; }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(100% - 28px, 1120px); }
+      h1 { letter-spacing: -2.5px; }
+      .hero-copy { font-size: 15px; }
+      .preview-window { margin-top: 42px; }
+      .mock-site { grid-template-columns: 1fr; }
+      .mock-art { min-height: 145px; }
+      section { padding: 62px 0; }
+      .process-grid { gap: 23px 16px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    Modern websites for growing businesses <span>·</span> Based in Canton, GA
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Canton Websites Co. home">
+        <span class="brand-icon">C</span>
+        <span>Canton Websites Co.<small>Web design studio</small></span>
+      </a>
+
+      <nav class="nav-links" id="navigation" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">Why us</a>
+        <a href="#pricing">Packages</a>
+        <a href="#process">Our process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="button button-primary" href="#contact">Let's Talk <span>↗</span></a>
+      <button class="menu-toggle" id="menuToggle"
+        aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">
+        ☰ Menu
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container reveal">
+        <div class="eyebrow"><span class="status-dot"></span> Your local web design partner</div>
+        <h1>Your business deserves a <span class="gradient-text">better website.</span></h1>
+        <p class="hero-copy">
+          We create clean, modern websites that help your business look professional,
+          explain what you do, and make it easy for customers to reach you.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contact">Get Your Website <span>→</span></a>
+          <a class="button button-outline" href="#services">Explore Services</a>
+        </div>
+        <p class="hero-note">Straightforward process. Modern design. Built around your business.</p>
+
+        <div class="preview-window" aria-label="Illustration of a sample business website">
+          <div class="window-bar">
+            <span class="window-dot"></span>
+            <span class="window-dot"></span>
+            <span class="window-dot"></span>
+            <span class="window-address">yourbusiness.com</span>
+          </div>
+          <div class="mock-site">
+            <div>
+              <div class="mock-label">A better online presence</div>
+              <h2>Make a great first impression.</h2>
+              <p>A sample of the clean, responsive design we can create for your business.</p>
+              <a href="#contact" class="mock-button">Start a Project ↗</a>
+            </div>
+            <div class="mock-art">
+              <div class="mock-card">
+                <div class="mock-label">Built for your business</div>
+                <div class="mock-line long"></div>
+                <div class="mock-line short"></div>
+                <div class="mock-line long"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">What we do</div>
+          <h2>Everything you need to get online.</h2>
+          <p>Simple, effective web design focused on making your business look its best.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <div class="service-icon" aria-hidden="true">✳</div>
+            <h3>Custom Websites</h3>
+            <p>A website designed around your business, services, and goals instead of a one-size-fits-all look.</p>
+            <a class="card-link" href="#contact">Discuss your website →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon" aria-hidden="true">▣</div>
+            <h3>Mobile-Friendly Design</h3>
+            <p>Layouts that adapt to phones, tablets, and desktops so customers can browse comfortably.</p>
+            <a class="card-link" href="#contact">Plan your design →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon" aria-hidden="true">↗</div>
+            <h3>Business Landing Pages</h3>
+            <p>A focused page that highlights your offer and helps visitors find the next step.</p>
+            <a class="card-link" href="#contact">Build a landing page →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section" id="about">
+      <div class="container why-grid">
+        <div class="why-copy">
+          <div class="section-kicker">Why Canton Websites Co.</div>
+          <h2>Good design. Clear communication. No confusion.</h2>
+          <p>
+            Your website should make it easier for people to understand your business.
+            We aim to keep the process straightforward from the first conversation to launch.
+          </p>
+          <a class="button button-primary" href="#contact">Tell Us Your Idea →</a>
+        </div>
+
+        <div class="benefit-list">
+          <div class="benefit">
+            <span class="check">✓</span>
+            <div><strong>Designed for your brand</strong><span>Colors, content, and layout suited to your business.</span></div>
+          </div>
+          <div class="benefit">
+            <span class="check">✓</span>
+            <div><strong>Responsive layouts</strong><span>A layout built to adapt to different screen sizes.</span></div>
+          </div>
+          <div class="benefit">
+            <span class="check">✓</span>
+            <div><strong>Clear next steps</strong><span>Useful links and contact options visitors can find.</span></div>
+          </div>
+          <div class="benefit">
+            <span class="check">✓</span>
+            <div><strong>Direct communication</strong><span>Discuss your project and requirements before agreeing on a price.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Website packages</div>
+          <h2>A starting point for every project.</h2>
+          <p>Every business is different. Contact us for a quote based on what you actually need.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="card pricing-card">
+            <h3>Starter</h3>
+            <p>For a small business that needs a simple online presence.</p>
+            <div class="price">Custom quote</div>
+            <div class="price-note">Based on your project</div>
+            <ul class="feature-list">
+              <li>Simple website or landing page</li>
+              <li>Essential business information</li>
+              <li>Contact links</li>
+              <li>Mobile-friendly layout</li>
+            </ul>
+            <a class="button button-outline" href="#contact" data-package="Starter">Ask About Starter</a>
+          </article>
+
+          <article class="card pricing-card featured">
+            <span class="popular">Popular option</span>
+            <h3>Professional</h3>
+            <p>For a business that needs room to show more services.</p>
+            <div class="price">Custom quote</div>
+            <div class="price-note">Based on your project</div>
+            <ul class="feature-list">
+              <li>Multiple website sections or pages</li>
+              <li>Custom visual styling</li>
+              <li>Service and contact sections</li>
+              <li>Responsive design</li>
+            </ul>
+            <a class="button button-primary" href="#contact" data-package="Professional">Ask About Professional</a>
+          </article>
+
+          <article class="card pricing-card">
+            <h3>Premium</h3>
+            <p>For a more involved website with specific requirements.</p>
+            <div class="price">Custom quote</div>
+            <div class="price-note">Based on your project</div>
+            <ul class="feature-list">
+              <li>Expanded page structure</li>
+              <li>More tailored design details</li>
+              <li>Additional features by agreement</li>
+              <li>Project-specific planning</li>
+            </ul>
+            <a class="button button-outline" href="#contact" data-package="Premium">Ask About Premium</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">How it works</div>
+          <h2>From idea to online.</h2>
+          <p>A clear process that keeps you in the loop.</p>
+        </div>
+
+        <div class="process-grid">
+          <div>
+            <div class="step-number">STEP 01</div>
+            <h3>Tell us your idea</h3>
+            <p>Share your business, goals, and the kind of website you have in mind.</p>
+          </div>
+          <div>
+            <div class="step-number">STEP 02</div>
+            <h3>Plan the design</h3>
+            <p>Discuss the layout, features, content, and project quote.</p>
+          </div>
+          <div>
+            <div class="step-number">STEP 03</div>
+            <h3>Build and review</h3>
+            <p>Review the proposed website and request agreed-upon changes.</p>
+          </div>
+          <div>
+            <div class="step-number">STEP 04</div>
+            <h3>Launch</h3>
+            <p>Finalize the website and arrange hosting and a domain as agreed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <div class="section-kicker">Let's build something</div>
+            <h2>Ready to get your business online?</h2>
+            <p>
+              Tell us a little about your project. Your message will be prepared
+              in your email app so you can review it before sending.
+            </p>
+            <p>Email us directly:<br>
+              <a class="email-link" href="mailto:alexsesma.us@gmail.com">alexsesma.us@gmail.com</a>
+            </p>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" autocomplete="name" required
+                placeholder="Your name">
+            </div>
+
+            <div class="field">
+              <label for="business">Business name</label>
+              <input id="business" name="business" autocomplete="organization"
+                placeholder="Your business (if applicable)">
+            </div>
+
+            <div class="field">
+              <label for="email">Your email</label>
+              <input id="email" name="email" type="email" autocomplete="email"
+                required placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+              <label for="package">What are you interested in?</label>
+              <select id="package" name="package">
+                <option value="Not sure yet">Not sure yet</option>
+                <option value="Starter">Starter</option>
+                <option value="Professional">Professional</option>
+                <option value="Premium">Premium</option>
+                <option value="Landing page">Landing page</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="details">Tell us about your project</label>
+              <textarea id="details" name="details" required
+                placeholder="What kind of website do you need?"></textarea>
+            </div>
+
+            <button class="button button-primary" type="submit">
+              Prepare Email <span>↗</span>
+            </button>
+            <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#home">
+        <span class="brand-icon">C</span>
+        <span>Canton Websites Co.<small>Web design studio</small></span>
+      </a>
+      <span>© <span id="year"></span> Canton Websites Co.</span>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Packages</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const EMAIL_ADDRESS = "alexsesma.us@gmail.com";
+
+    // Keep the copyright year current.
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile navigation opens and closes with the menu button.
+    const menuToggle = document.getElementById("menuToggle");
+    const navigation = document.getElementById("navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+      menuToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+    });
+
+    // Close the mobile menu after a navigation link is selected.
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.textContent = "☰ Menu";
+      });
+    });
+
+    // Package buttons select that package and take the visitor to the form.
+    document.querySelectorAll("[data-package]").forEach((link) => {
+      link.addEventListener("click", () => {
+        const packageSelect = document.getElementById("package");
+        packageSelect.value = link.dataset.package;
+      });
+    });
+
+    // Validate the form, then open an email draft with the entered details.
+    // This does not send email automatically or require a paid form service.
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) {
+        formMessage.textContent = "Please complete the required fields.";
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      const name = String(formData.get("name") || "").trim();
+      const business = String(formData.get("business") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const selectedPackage = String(formData.get("package") || "").trim();
+      const details = String(formData.get("details") || "").trim();
+
+      const subject = `Website Request - ${name}`;
+      const body = [
+        `Name: ${name}`,
+        `Business: ${business || "Not provided"}`,
+        `Reply email: ${email}`,
+        `Interested in: ${selectedPackage}`,
+        "",
+        "Project details:",
+        details
+      ].join("\n");
+
+      const mailto =
+        `mailto:${EMAIL_ADDRESS}` +
+        `?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+
+      formMessage.textContent =
+        "Your email draft is being opened. Review it and press Send in your email app.";
+
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
